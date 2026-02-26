@@ -232,16 +232,46 @@
 #        a.add(x)
 #print(a)
 #print(9*3*21*15)
+#
+#a = set(range(1,1000))
+#
+#def f(x):
+#    p=x in {2,4,6,8,10,12,14,16,18,20}
+#    q=x in {5,10,15,20,25,30,35,40,45,50}
+#    A=x in a
+#    return (A<=p)and(q<=(not A))
+#
+#for x in range(1,1000):
+#    if f(x)==0:
+#        a.remove(x)
+#print(a)
+#
+#
+#
+#a = set()
+#
+#def f(x):
+#    P = x[0]+x[1]=='01'
+#    Q = x[-1]=='1'
+#    A = x in a
+#    return Q <= (P or A)
+#
+#from itertools import *
+#
+#for x in product('01',repeat=16):
+#    if f(x)==0:
+#        a.add(x)
+#print(len(a))
 
-a = set(range(1,1000))
 
 def f(x):
-    p=x in {2,4,6,8,10,12,14,16,18,20}
-    q=x in {5,10,15,20,25,30,35,40,45,50}
-    A=x in a
-    return (A<=p)and(q<=(not A))
+    D = 15<=x<=40
+    C = 21<=x<=63
+    A = 7<=x<=e
+    return D <= ((not C and not A) <= (not D))
 
-for x in range(1,1000):
-    if f(x)==0:
-        a.remove(x)
-print(a)
+ox = [dx for x in (15,40,21,63,7) for dx in (x-0.01,x,x+0.01)]
+
+for e in range(8,100):
+    if all(f(x)==1 for x in ox):
+        print(e)
