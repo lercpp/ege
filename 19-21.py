@@ -145,21 +145,112 @@
 #print(20,[s for s in range(18,479) if not f(s,1) and f(s,3)])
 #print(21,[s for s in range(18,479) if not f(s,2) and f(s,4)])
 
-def f(a,b,m):
-    if a+b>=259:return m%2==0
-    if m==0:return 0
-    h=[f(a+1,b,m-1),f(a*2,b,m-1),f(a,b+1,m-1),f(a,b*2,m-1)]
+#def f(a,b,m):
+#    if a+b>=259:return m%2==0
+#    if m==0:return 0
+#    h=[f(a+1,b,m-1),f(a*2,b,m-1),f(a,b+1,m-1),f(a,b*2,m-1)]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(1,242) if f(17,s,2)])
+
+#def f(s,m):
+#    if s<10: return m%2==0
+#    if m==0: return 0
+#    h = [f(s-1,m-1),f(s-2,m-1),f(s-3,m-1),f(s-4,m-1),f(s-5,m-1)]
+#    if s%2==0:
+#        h += [f(s//2,m-1)]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(10,100) if f(s,2)])
+#print(20,[s for s in range(10,100) if not f(s,1) and f(s,3)])
+#print(21,[s for s in range(10,100) if not f(s,2) and f(s,4)])
+
+#def f(s,m):
+#    if s<=1: return m%2==0
+#    if m==0: return 0
+#    h = [f(s-1,m-1)]
+#    if s>=4: h+=[f(s-4,m-1)]
+#    if s%3==0: h+=[f(s//3,m-1)]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(4,101) if f(s,2)])
+#print(20,[s for s in range(4,101) if not f(s,1) and f(s,3)])
+#print(21,[s for s in range(4,101) if not f(s,2) and f(s,4)])
+
+
+#def f(s,m):
+#    if s>=41: return m%2==0
+#    if m==0: return 0
+#    h = [f(s+1,m-1),f(s+2,m-1)]
+#    if s<=25: h+=[f(s*2,m-1)]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(1,41) if not f(s,2) and f(s,4)])
+#print(20,[s for s in range(1,41) if not f(s,4) and f(s,6)])
+#print(21,[s for s in range(1,41) if not f(s,1) and f(s,3)])
+
+
+#def f(s,m):
+#    if s>=151: return m%2==0
+#    if m==0: return 0
+#    h = []
+#    if (s+1)%3!=0: h+=[f(s+1,m-1)]
+#    if (s+2)%3!=0: h+=[f(s+2,m-1)]
+#    if (s*2)%3!=0: h+=[f(s*2,m-1)]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(1,150) if s%3!=0 and f(s,2)])
+#print(20,[s for s in range(1,150) if s%3!=0 and not f(s,1) and f(s,3)])
+#print(21,[s for s in range(1,150) if s%3!=0 and not f(s,2) and f(s,4)])
+
+#def f(s,m,p):
+#    if s>=62: return m%2==0
+#    if m==0: return 0
+#    h = []
+#    if p!='1': h+=[f(s+1,m-1,'1')]
+#    if p!='2': h+=[f(s+2,m-1,'2')]
+#    if p!='3': h+=[f(s*3,m-1,'3')]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(1,62) if f(s,2,'')])
+#print(20,[s for s in range(1,62) if not f(s,1,'') and f(s,3,'')])
+#print(21,[s for s in range(1,62) if not f(s,2,'') and f(s,4,'')])
+
+#def f(s,m,tr):
+#    if s>=21: return m%2==0
+#    if m==0: return 0
+#    h = []
+#    if tr[-2]!='1': h+=[f(s+1,m-1,tr+'1')]
+#    if tr[-2]!='2': h+=[f(s+2,m-1,tr+'2')]
+#    if tr[-2]!='3': h+=[f(s*2,m-1,tr+'3')]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(1,21) if not f(s,1,'00') and f(s,3,'00')])
+#print(20,[s for s in range(1,21) if not f(s,2,'00') and f(s,4,'00')])
+#print(21,[s for s in range(1,21) if not f(s,3,'00') and f(s,5,'00')])
+
+#from functools import *
+
+#@lru_cache(None)
+#def f(s,m):
+#    if s==0: return m%2==0
+#    if m==0: return 0
+#    h = [f(s-1,m-1)]+[f(s-i,m-1) for i in range(1,s//2+1)]
+#    return any(h) if (m-1)%2==0 else all(h)
+
+#print(19,[s for s in range(10,100) if f(s,100)])
+#print(20,[s for s in range(100,1000) if f(s,101)])
+#print(21,[s for s in range(100,1000) if f(s,100)])
+
+def f(s,m,end):
+    if s>=end: return m%2==0
+    if m==0: return 0
+    h = [f(s+2,m-1,end), f(s*3,m-1,end)]
     return any(h) if (m-1)%2==0 else all(h)
 
-print(19,[s for s in range(1,242) if f(17,s,2)])
-
-
-
-
-
-
-
-
+print(19,[end for end in range(16,100) if f(15,2,end)])
+print(20,[end for end in range(11,100) if not f(10,1,end) and f(10,3,end)])
+print(21,[end for end in range(6,100) if not f(5,2,end) and f(5,4,end)])
 
 
 
