@@ -359,22 +359,252 @@
 #    if S!=0 and S%145==0:
 #        print(x,S)
 
-def div(x):
-    d = set()
-    for i in range(2, int(x**0.5)+1):
-        if x%i==0:
-            d|={i,x//i}
-    return sorted(d)
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
 
-for x in range(23_600_001,23_601_000):
-    d = [i for i in div(x) if len(div(i))==0]
-    if len(d)>0:
-        M = max(d)+min(d)
-        if M%213==171:
-            print(x,M)
+#for x in range(23_600_001,23_601_000):
+#    d = [i for i in div(x) if len(div(i))==0]
+#    if len(d)>0:
+#        M = max(d)+min(d)
+#        if M%213==171:
+#            print(x,M)
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(9500000,9510000):
+#    d=[i for i in div(x) if len(div(i))==0]
+#    if len(d)>0:
+#        f=sum(d)//len(d)
+#        if f%813==0:
+#            print(x,f)
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(1_474_999,1_470_000,-1):
+#    d = [i for i in div(x) if len(div(i))==0]
+#    S = sum(d)
+#    if S!=0 and S<=42000 and S%6==0:
+#        print(x,S)
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(55000000,55051000):
+#    d = [i for i in div(x) if len(div(i))==0 and i%1000==777]
+#    if len(d)>0:
+#        print(x,min(d))
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(3_333_338,3_338_000):
+#    d = [i for i in div(x) if len(div(i))==0]
+#    if len(d)>0:
+#        R = max(d)-min(d)
+#        if R>1000 and R%3==0:
+#            print(x,R)
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(749999,740000,-1):
+#    d = [i for i in div(x) if len(div(i))==0 and i%10==7]
+#    if len(d)>0:
+#        F = sum(d)//len(d)
+#        if F%111==0:
+#            print(x,F)
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(456_790,460_000):
+#    d = [i for i in div(x) if len(div(i))==0]
+#    if len(d)>=4:
+#        M = d[0]+d[1]+d[-1]+d[-2]
+#        if M%114==39:
+#            print(x,M)
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(5_400_001,5_410_000):
+#    d = [i for i in div(x) if len(div(i))==0]
+#    if len(d)>0:
+#        M = min(d)+max(d)
+#        if M>60_000 and str(M)==str(M)[::-1]:
+#            print(x,M)
+
+#def div(x):
+#    d = set()
+#    for i in range(2, int(x**0.5)+1):
+#        if x%i==0:
+#            d|={i,x//i}
+#    return sorted(d)
+
+#for x in range(5_700_001,5_710_000):
+#    d = [i for i in div(x) if len(div(i))==0]
+#    if len(d)>0:
+#        M = min(d)+max(d)
+#        if M>70_000 and M**0.5%1==0:
+#            print(x,M)
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(125697,125722):
+#    d = fact(x)
+#    if len(d)==2 and d[0]!=d[1]:
+#        print(d[0],d[1])
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(1_324_728,1_330_000):
+#    d=fact(x)
+#    if len(d)==2 and str(d[0]).count('5')==1 and str(d[1]).count('5')==1:
+#        print(x,max(d))
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(7_305_679,7_310_000):
+#    d = fact(x)
+#    if len(d)==4 and str(sum(d))==str(sum(d))[::-1]:
+#        print(x,sum(d))       
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(3_502_101,3_505_000):
+#    d = fact(x)
+#    if len(d)==4 and 11 in d:
+#        print(x,max(d))
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(8_000_010,8_010_000,100):
+#    d = fact(x)
+#    if len(d)==len(set(d)):
+#        print(x,max(d))                   
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(5_000_012,5_010_000,100):
+#    d = fact(x)
+#    d5 = [x for x in d if d.count(x)==5]
+#    if len(d5)>0:
+#        print(x, min(d5))
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(89428305, 89500000):
+#    d = fact(x)
+#    if len(d)>=6 and x%sum(d)==0:
+#        print(x, sum(d))
+
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+#for x in range(3_909_601,3_910_000):
+#    d=fact(x)
+#    dq=[i for i in d if max(d)>x]
+#    if len(d)==7 and max(d)>sum(dq):
+#        print(x,max(d))
 
 
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
+
+#for x in range(123456789, 123459000):
+#    d = fact(x)
+#    if len(d)==7 and '5' in str(sum(d)) and max(d)%10==9:
+#        print(x,max(d))
 
 
+#def fact(n):
+#    for i in range(2,int(n**0.5)+1):
+#        if n%i==0:
+#            return [i]+fact(n//i)
+#    return [n]
 
+#for x in range(987654320, 98765000,-1):
+#    d = fact(x)
+#    if len(d)==13 and '1' in str(sum(d)):
+#        print(x,max(d))
 
+#for x in range(1_000_001,1_100_000):
+#    for i in range(1,20):
+#        y = x-5**i
+#        if y>0 and y%222==0 and '1' not in str(y) and \
+#           '3' not in str(y) and '5' not in str(y) and \
+#           '7' not in str(y) and '9' not in str(y):
+#            print(x,i)
+
+for x in range(100000,150000):
+    for i in range(1,20):
+        y = x-3**i
+        if '0' not in str(x) and y>0 and y%2!=0 and y%113==0:
+            print(x,i)
